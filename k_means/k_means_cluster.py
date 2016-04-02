@@ -70,6 +70,19 @@ for key in data_dict:
             max = stock
 
 print min, max
+
+min = 10000000
+max = 0
+for key in data_dict:
+    stock = data_dict[key]['from_messages']
+    
+    if (stock != "NaN"):
+        if stock < min:
+            min = stock
+        elif stock > max:
+            max = stock
+
+print min, max
 ### the input features we want to use 
 ### can be any key in the person-level dictionary (salary, director_fees, etc.) 
 feature_1 = "salary"
@@ -81,6 +94,8 @@ features_list = [poi, feature_1, feature_2]
 data = featureFormat(data_dict, features_list )
 poi, finance_features = targetFeatureSplit( data )
 
+#import pprint
+#pprint.pprint(data)
 
 ### in the "clustering with 3 features" part of the mini-project,
 ### you'll want to change this line to 
