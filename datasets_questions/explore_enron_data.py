@@ -44,8 +44,10 @@ for key in enron_data.keys():
 	pprint.pprint(enron_data[key].keys())
 	# For each person, how many features are available?
 	#print len(enron_data[key].keys())
-	
-	
+	#for k in enron_data[key].keys():
+    #    pprint.pprint(enron_data[key][k])
+	for k in enron_data[key].keys():
+		print "  ",key, " ", k, ":", enron_data[key][k]
 	break
 
 print enron_data['PRENTICE JAMES']['total_stock_value']
